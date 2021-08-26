@@ -3,7 +3,7 @@
 namespace WowApp.Host.Objects
 {
 
-    public abstract class StandartObject: IGetInfo//Абстрактный класс реализует интерфейс с последующим наследованием
+    public abstract class StandardObject: IGetInfo//Абстрактный класс реализует интерфейс с последующим наследованием
     {
         public abstract string Name { get; set; }
         public abstract string Color { get; set; }

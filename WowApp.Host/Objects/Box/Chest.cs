@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace WowApp.Host.Objects.Box
 {
-    class Chest : StandartObject
+    class Chest : StandardObject
     {
         private string _name = "Сундук";
         private string _color = "Желтый";

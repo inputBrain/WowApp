@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace WowApp.Host.Objects.Items
 {
-    class Pickaxe : StandartObject
+    class Pickaxe : StandardObject
     {
         private string _name = "Кирка";
         private string _color = "";

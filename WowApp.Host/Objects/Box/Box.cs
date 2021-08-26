@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace WowApp.Host.Objects.Box
 {
-    public class Box : StandartObject
+    public class Box : StandardObject
     {
         private string _name = "Коробка1";
         private string _color = "Серая";
@@ -22,10 +22,7 @@ namespace WowApp.Host.Objects.Box
             {
                 WriteLine(_name + " " + _color + " ID_" + _id);
             }
-            else
-            {
-                WriteLine(_name);
-            }
+            WriteLine(_name);
         }
     }
 }

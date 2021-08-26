@@ -11,7 +11,7 @@ namespace WowApp.Host
         {
             public static void Main()
             {
-                StandartObject[] inventory = { new Box(), new Chest(), new Pickaxe()};
+                StandardObject[] inventory = { new Box(), new Chest(), new Pickaxe()};
 
                 foreach (var obj in inventory)
                 {
@@ -20,11 +20,12 @@ namespace WowApp.Host
                 Console.WriteLine($"\n");
                 inventory[0].Name = "Коробка второго уровня";
 
+
+                var fullOrNot = Console.ReadLine();
                 foreach (var obj in inventory)
                 {
-                    GetInformation(obj, "!Full");
+                    GetInformation(obj, fullOrNot);
                 }
-                Console.ReadLine();
             }
 
             static public void GetInformation(IGetInfo obj, string typeInfo)
