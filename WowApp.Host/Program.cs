@@ -1,36 +1,49 @@
-using System;
-using WowApp.Host.Interfaces;
-using WowApp.Host.Objects;
-using WowApp.Host.Objects.Box;
-using WowApp.Host.Objects.Items;
+using System.IO;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using WowApp.Host.Models.Weapons;
 
 namespace WowApp.Host
 {
+    public class Program
+    {
+        private static IWeaponContainer WeaponContainer;
 
-        public class Program
+        public Program(IWeaponContainer weaponContainer)
         {
-            public static void Main()
-            {
-                StandardObject[] inventory = { new Box(), new Chest(), new Pickaxe()};
-
-                foreach (var obj in inventory)
-                {
-                    GetInformation(obj, "Full");
-                }
-                Console.WriteLine($"\n");
-                inventory[0].Name = "Коробка второго уровня";
-
-
-                var fullOrNot = Console.ReadLine();
-                foreach (var obj in inventory)
-                {
-                    GetInformation(obj, fullOrNot);
-                }
-            }
-
-            static public void GetInformation(IGetInfo obj, string typeInfo)
-            {
-                obj.ShowInfo(typeInfo);
-            }
+            WeaponContainer = weaponContainer;
         }
+
+
+        public static string GetAxeInfo() //TODO: Need to implement Dependency Injection...
+        {
+            var axeModel = WeaponContainer.Axe.CreateAxe("Color green!");
+            var info = WeaponContainer.Axe.GetInfo(axeModel, true);
+
+            return info;
+        }
+
+
+        public static void Main(string[] args)
+        {
+            var webHost = BuildWebHost(args);
+
+            GetAxeInfo();
+        }
+
+
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            var config = new ConfigurationBuilder()
+                         .SetBasePath(Directory.GetCurrentDirectory())
+                         .AddJsonFile("appsettings.json", optional: true)
+                         .Build();
+
+            return WebHost.CreateDefaultBuilder(args)
+                          .UseStartup<Startup>()
+                          .UseUrls(config.GetSection("Url").Value)
+                          .Build();
+        }
+    }
 }

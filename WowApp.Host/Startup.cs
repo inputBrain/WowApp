@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WowApp.Host.Models.Weapons;
 
 namespace WowApp.Host
 {
@@ -11,9 +12,10 @@ namespace WowApp.Host
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
-
+        private IWebHostEnvironment CurrentEnvironment{ get; set; }
         public IConfiguration Configuration { get; }
 
 
@@ -21,6 +23,7 @@ namespace WowApp.Host
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            ConfigureCoreServices(services);
         }
 
 
@@ -40,6 +43,15 @@ namespace WowApp.Host
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+        }
+
+        //TODO: DependencyInjection
+        private void ConfigureCoreServices(IServiceCollection services)
+        {
+            services.AddScoped<IWeaponContainer>
+            (
+                x => Factory.Create()
+            );
         }
     }
 }
