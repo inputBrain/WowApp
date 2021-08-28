@@ -1,4 +1,4 @@
-namespace WowApp.Model.User
+namespace WowApp.Model.Models.User
 {
     public enum UserRole
     {
