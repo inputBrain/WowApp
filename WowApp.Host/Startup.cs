@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WowApp.Host.Models.Weapons;
 
 namespace WowApp.Host
 {
@@ -23,7 +22,7 @@ namespace WowApp.Host
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            ConfigureCoreServices(services);
+            // ConfigureCoreServices(services); //TODO: soli -> D
         }
 
 
@@ -46,12 +45,12 @@ namespace WowApp.Host
         }
 
         //TODO: DependencyInjection
-        private void ConfigureCoreServices(IServiceCollection services)
-        {
-            services.AddScoped<IWeaponContainer>
-            (
-                x => Factory.Create()
-            );
-        }
+        // private void ConfigureCoreServices(IServiceCollection services)
+        // {
+        //     services.AddScoped<IWeaponContainer>
+        //     (
+        //         x => Factory.Create()
+        //     );
+        // }
     }
 }
