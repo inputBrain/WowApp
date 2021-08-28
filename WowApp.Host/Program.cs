@@ -4,7 +4,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using WowApp.Database.User;
-using WowApp.Model.User;
+using WowApp.Database.Weapon;
+using WowApp.Model.Models.User;
 
 namespace WowApp.Host
 {
@@ -22,7 +23,13 @@ namespace WowApp.Host
                 Cover = "Cover",
                 Role = UserRole.Admin
             };
+            var testWeapon = new WeaponModel()
+            {
+                Name = "Автомат",
+                ReloadTime = 3.23f,
+            };
 
+            Console.WriteLine(testWeapon.Name + " " + testWeapon.ReloadTime);
 
             Console.WriteLine(userModel.FirstName);
 
