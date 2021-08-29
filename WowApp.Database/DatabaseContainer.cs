@@ -14,6 +14,7 @@ namespace WowApp.Database
         public DatabaseContainer(ILoggerFactory loggerFactory)
         {
             User = new UserRepository(loggerFactory);
+            Weapon = new WeaponRepository(loggerFactory);
         }
     }
 }
