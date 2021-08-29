@@ -1,7 +1,8 @@
 namespace WowApp.Database.Service
 {
-    public class IServiceContainer
+    // Читать в UserService.
+    public interface IServiceContainer
     {
-        
+        IUserService UserService { get; }
     }
 }
