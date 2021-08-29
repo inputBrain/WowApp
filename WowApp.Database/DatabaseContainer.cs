@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Logging;
 using WowApp.Database.User;
 using WowApp.Database.Weapon;
 
@@ -8,16 +7,19 @@ namespace WowApp.Database
     // в этом месте будут создаваться  наш(-ы) объекты и мы сможем через интерфейсы которые описаны ниже
     // использовать нужный нам функционал. Нужно помнить о том, что мы будем обращаться к интерфейсам
     // и если в интерфейсе не будет описан нужный нам функционал, то мы не сможем его использовать.
-    public class DatabaseContainer : IDatabaseContainer
+    internal class DatabaseContainer : IDatabaseContainer
     {
         public IUserRepository User { get; }
         public IWeaponRepository Weapon { get; }
 
 
-        public DatabaseContainer(ILoggerFactory loggerFactory)
+        public DatabaseContainer(
+            IUserRepository user,
+            IWeaponRepository weapon
+        )
         {
-            User = new UserRepository(loggerFactory);
-            Weapon = new WeaponRepository(loggerFactory);
+            User = user;
+            Weapon = weapon;
         }
     }
 }

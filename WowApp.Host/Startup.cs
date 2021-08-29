@@ -7,6 +7,9 @@ using Microsoft.Extensions.Logging;
 using WowApp.Database;
 using WowApp.Database.Service;
 
+using ServiceFactory = WowApp.Database.Service.Factory;
+using DatabaseFactory = WowApp.Database.Factory;
+
 namespace WowApp.Host
 {
     public class Startup
@@ -52,10 +55,13 @@ namespace WowApp.Host
 
         private void ConfigureCoreServices(IServiceCollection services)
         {
-            services.AddScoped<IDatabaseContainer, DatabaseContainer>();
+            services.AddScoped<IDatabaseContainer>(
+                x => DatabaseFactory.Create(_loggerFactory)
+            );
+
             services.AddScoped<IServiceContainer>
             (
-                x => Factory.Create(
+                x => ServiceFactory.Create(
                     _loggerFactory,
                     x.GetRequiredService<IDatabaseContainer>()
                 )
