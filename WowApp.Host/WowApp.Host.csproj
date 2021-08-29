@@ -10,10 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <ProjectReference Include="..\WowApp.Database.Service\WowApp.Database.Service.csproj" />
       <ProjectReference Include="..\WowApp.Database\WowApp.Database.csproj" />
       <ProjectReference Include="..\WowApp.Model\WowApp.Model.csproj" />
     </ItemGroup>

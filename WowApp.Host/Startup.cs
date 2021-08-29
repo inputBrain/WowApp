@@ -3,15 +3,21 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using WowApp.Database;
+using WowApp.Database.Service;
 
 namespace WowApp.Host
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+
+        private ILoggerFactory _loggerFactory;
+
+        public Startup(IConfiguration configuration, ILoggerFactory loggerFactory)
         {
             Configuration = configuration;
-
+            _loggerFactory = loggerFactory;
         }
 
         private IWebHostEnvironment CurrentEnvironment{ get; set; }
@@ -22,7 +28,7 @@ namespace WowApp.Host
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            // ConfigureCoreServices(services); //TODO: soli -> D
+            ConfigureCoreServices(services);
         }
 
 
@@ -44,13 +50,16 @@ namespace WowApp.Host
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
 
-        //TODO: DependencyInjection
-        // private void ConfigureCoreServices(IServiceCollection services)
-        // {
-        //     services.AddScoped<IWeaponContainer>
-        //     (
-        //         x => Factory.Create()
-        //     );
-        // }
+        private void ConfigureCoreServices(IServiceCollection services)
+        {
+            services.AddScoped<IDatabaseContainer, DatabaseContainer>();
+            services.AddScoped<IServiceContainer>
+            (
+                x => Factory.Create(
+                    _loggerFactory,
+                    x.GetRequiredService<IDatabaseContainer>()
+                )
+            );
+        }
     }
 }
