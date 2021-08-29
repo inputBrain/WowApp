@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 
 
-using WowApp.Model.Models.Weapon;
-
+using WowApp.Model.Weapon;
+using WowApp.Model.Weapon.Explosives;
 namespace WowApp.Database.Weapon
 {
     public class WeaponModel : AbstractModel, IWeapon
@@ -15,18 +15,24 @@ namespace WowApp.Database.Weapon
 
         public float ReloadTime { get; set; }
 
+        public WeaponType Type { get; set; }
+
+
         public static WeaponModel CreateModel
         (
             string name,
             int damage,
-            float reloadTime
+            float reloadTime,
+            WeaponType type
         )
+
         {
             return new WeaponModel()
             {
                 Name = name,
                 Damage = damage,
-                ReloadTime = reloadTime
+                ReloadTime = reloadTime,
+                Type = type
             };
 
         }

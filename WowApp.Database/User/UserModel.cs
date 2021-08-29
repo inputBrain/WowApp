@@ -1,4 +1,4 @@
-using WowApp.Model.Models.User;
+using WowApp.Model.User;
 
 namespace WowApp.Database.User
 {
@@ -15,12 +15,14 @@ namespace WowApp.Database.User
         public UserRole Role { get; set; }
 
 
-        public static UserModel CreateModel(
+        public static UserModel CreateModel
+        (
             string firstName,
             string lastName,
             string cover,
             UserRole role
         )
+
         {
             return new UserModel()
             {

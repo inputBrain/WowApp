@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using WowApp.Database.User;
 using WowApp.Database.Weapon;
-using WowApp.Model.Models.User;
+using WowApp.Database.Weapon.Explosives;
+using WowApp.Model.User;
 
 namespace WowApp.Host
 {
@@ -23,15 +24,46 @@ namespace WowApp.Host
                 Cover = "Cover",
                 Role = UserRole.Admin
             };
+
             var testWeapon = new WeaponModel()
             {
                 Name = "Автомат",
                 ReloadTime = 3.23f,
+                Damage = 1,
+                Type = Model.Weapon.WeaponType.firearms,
             };
 
-            Console.WriteLine(testWeapon.Name + " " + testWeapon.ReloadTime);
+            var secondTestWeapon = new ExplosiveModel()
+            {
+                Name = "C4",
+                ReloadTime = 0f,
+                Damage = 200,
+                Type = Model.Weapon.WeaponType.explosives,
+                Range = 30f
+            };
 
-            Console.WriteLine(userModel.FirstName);
+            Console.WriteLine
+            (
+                $"Название {testWeapon.Name}," +
+                $" урон {testWeapon.Damage}," +
+                $" время перезарядки {testWeapon.ReloadTime}," +
+                $" тип {testWeapon.Type}"
+            );
+
+            Console.WriteLine
+            (
+                $"Название {secondTestWeapon.Name}," +
+                $" урон {secondTestWeapon.Damage}," +
+                $" время перезарядки {secondTestWeapon.ReloadTime}," +
+                $" тип {secondTestWeapon.Type}",
+                $" радиус {secondTestWeapon.Range}"
+            );
+
+
+
+
+
+
 
 
             var webHost = BuildWebHost(args);

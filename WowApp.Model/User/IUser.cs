@@ -1,4 +1,4 @@
-namespace WowApp.Model.Models.User
+namespace WowApp.Model.User
 {
 
     // Базовый интерфейс модельки User. Этот интерфейс описывает нашу модельку

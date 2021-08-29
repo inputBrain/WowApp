@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using WowApp.Model.Weapon;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace WowApp.Database.Weapon
 {
@@ -9,16 +8,23 @@ namespace WowApp.Database.Weapon
     {
         public WeaponRepository(ILoggerFactory loggerFactory) : base(loggerFactory)
         {
+
         }
+
         public WeaponModel Create
         (
             string name,
             int damage,
-            float reloadTime
+            float reloadTime,
+            WeaponType type,
+            float range
         )
+
         {
-            var model = WeaponModel.CreateModel(name, damage, reloadTime);
+            var model = WeaponModel.CreateModel(name, damage, reloadTime, type);
             return model;
         }
+
+
     }
 }

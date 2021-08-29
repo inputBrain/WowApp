@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WowApp.Model.Models.Weapon;
+﻿using WowApp.Model.Weapon;
+using WowApp.Model.Weapon.Explosives;
 
 namespace WowApp.Database.Weapon
 {

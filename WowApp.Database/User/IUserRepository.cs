@@ -1,4 +1,4 @@
-using WowApp.Model.Models.User;
+using WowApp.Model.User;
 
 namespace WowApp.Database.User
 {

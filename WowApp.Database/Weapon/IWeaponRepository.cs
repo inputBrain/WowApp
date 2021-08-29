@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using WowApp.Model.Weapon;
 
 namespace WowApp.Database.Weapon
 {
@@ -10,7 +8,9 @@ namespace WowApp.Database.Weapon
         (
             string name,
             int damage,
-            float reloadTime
+            float reloadTime,
+            WeaponType type,
+            float range
         );
     }
 }

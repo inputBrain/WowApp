@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Logging;
-using WowApp.Model.Models.User;
+using WowApp.Model.User;
 
 namespace WowApp.Database.User
 {
@@ -7,6 +7,7 @@ namespace WowApp.Database.User
     {
         public UserRepository(ILoggerFactory loggerFactory) : base(loggerFactory)
         {
+
         }
 
         public UserModel Create(
@@ -15,6 +16,7 @@ namespace WowApp.Database.User
             string cover,
             UserRole role
         )
+
         {
             var model = UserModel.CreateModel(firstName, lastName, cover, role);
 
