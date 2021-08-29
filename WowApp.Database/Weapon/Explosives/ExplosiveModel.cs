@@ -7,6 +7,7 @@ namespace WowApp.Database.Weapon.Explosives
     {
         public float Range { get; set; }
 
+
         public static ExplosiveModel CreateModel
        (
            string name,

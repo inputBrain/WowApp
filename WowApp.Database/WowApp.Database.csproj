@@ -11,10 +11,5 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.2" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Weapon\Firearms\" />
-      <Folder Include="Weapon\HandToHand\" />
-    </ItemGroup>
     
 </Project>

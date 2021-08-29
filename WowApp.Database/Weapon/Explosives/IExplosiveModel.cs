@@ -2,8 +2,7 @@
 
 namespace WowApp.Database.Weapon.Explosives
 {
-    public interface IExplosiveModel: IExplosive
+    public interface IExplosiveModel : IExplosive
     {
-
     }
 }

@@ -5,9 +5,4 @@
 
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Weapon\Firearms\" />
-      <Folder Include="Weapon\HandToHand\" />
-    </ItemGroup>
-
 </Project>
