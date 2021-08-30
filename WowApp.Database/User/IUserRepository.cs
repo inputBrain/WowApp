@@ -2,7 +2,7 @@ using WowApp.Model.User;
 
 namespace WowApp.Database.User
 {
-    public interface IUserRepository//Абстрактное описание User'a
+    public interface IUserRepository//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ User'a
     {
         UserModel Create
             (
