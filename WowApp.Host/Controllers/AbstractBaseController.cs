@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 namespace WowApp.Host.Controllers
 {
     [ApiController]
+    [Produces("application/json")]
     [Route("api/[controller]/[action]")]
     public abstract class AbstractBaseController<T> : ControllerBase
     {

@@ -4,8 +4,6 @@ using WowApp.Database.Service;
 
 namespace WowApp.Host.Controllers
 {
-    [ApiController]
-    [Produces("application/json")]
     public class CoreController : AbstractBaseController<CoreController>
     {
         private readonly IServiceContainer _serviceContainer;

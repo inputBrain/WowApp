@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowApp.Database", "WowApp.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowApp.Database.Service", "WowApp.Database.Service\WowApp.Database.Service.csproj", "{2CF433CF-138B-4DAB-9F0E-69B614CA67C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowApp.Database.Test", "WowApp.Database.Test\WowApp.Database.Test.csproj", "{0E9FD4EA-A358-4B44-A778-8E46329944B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{2CF433CF-138B-4DAB-9F0E-69B614CA67C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CF433CF-138B-4DAB-9F0E-69B614CA67C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CF433CF-138B-4DAB-9F0E-69B614CA67C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E9FD4EA-A358-4B44-A778-8E46329944B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E9FD4EA-A358-4B44-A778-8E46329944B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E9FD4EA-A358-4B44-A778-8E46329944B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E9FD4EA-A358-4B44-A778-8E46329944B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

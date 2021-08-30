@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-
-using WowApp.Model.Weapon;
-using WowApp.Model.Weapon.Explosives;
+﻿using WowApp.Model.Weapon;
 namespace WowApp.Database.Weapon
 {
     public class WeaponModel : AbstractModel, IWeapon

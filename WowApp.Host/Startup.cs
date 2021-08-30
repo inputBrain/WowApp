@@ -1,5 +1,7 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -53,8 +55,20 @@ namespace WowApp.Host
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
 
+
         private void ConfigureCoreServices(IServiceCollection services)
         {
+            Type typeOfContent = typeof(Startup);
+
+            services.AddDbContext<PostgreSqlContext>
+            (
+                x => x.UseNpgsql
+                (
+                    Configuration.GetConnectionString("PostgreSqlConnection"),
+                    b => b.MigrationsAssembly(typeOfContent.Assembly.GetName().Name)
+                )
+            );
+
             services.AddScoped<IDatabaseContainer>(
                 x => DatabaseFactory.Create(_loggerFactory)
             );
