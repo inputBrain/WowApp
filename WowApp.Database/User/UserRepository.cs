@@ -7,10 +7,11 @@ namespace WowApp.Database.User
     {
         public UserRepository(ILoggerFactory loggerFactory) : base(loggerFactory)
         {
-
+            //Тут творится что - то неизведанное
         }
 
-        public UserModel Create(
+        public UserModel Create//Принимает данные для создания новой модельки
+            (
             string firstName,
             string lastName,
             string cover,
@@ -18,7 +19,7 @@ namespace WowApp.Database.User
         )
 
         {
-            var model = UserModel.CreateModel(firstName, lastName, cover, role);
+            var model = UserModel.CreateModel(firstName, lastName, cover, role);//Отправляем данные в UserModel
 
             return model;
         }
