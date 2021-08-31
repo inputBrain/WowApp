@@ -70,7 +70,7 @@ namespace WowApp.Host
             );
 
             services.AddScoped<IDatabaseContainer>(
-                x => DatabaseFactory.Create(_loggerFactory)
+                x => DatabaseFactory.Create(x.GetRequiredService<PostgreSqlContext>(), _loggerFactory)
             );
 
             services.AddScoped<IServiceContainer>

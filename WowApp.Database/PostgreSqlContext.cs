@@ -18,8 +18,8 @@ namespace WowApp.Database
         ) : base(options)
         {
             Db = new DatabaseContainer(
-                new UserRepository(loggerFactory),
-                new WeaponRepository(loggerFactory)
+                new UserRepository(this, loggerFactory),
+                new WeaponRepository(this, loggerFactory)
             );
         }
     }

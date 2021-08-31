@@ -6,11 +6,11 @@ namespace WowApp.Database
 {
     public class Factory
     {
-        public static IDatabaseContainer Create(ILoggerFactory loggerFactory)
+        public static IDatabaseContainer Create(PostgreSqlContext db, ILoggerFactory loggerFactory)
         {
             return new DatabaseContainer(
-                new UserRepository(loggerFactory),
-                new WeaponRepository(loggerFactory)
+                new UserRepository(db, loggerFactory),
+                new WeaponRepository(db, loggerFactory)
             );
         }
     }

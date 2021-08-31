@@ -2,7 +2,7 @@ using WowApp.Model.User;
 
 namespace WowApp.Database.User
 {
-    public class UserModel : AbstractModel//Наследуем класс абстрактной модели объектов
+    public class UserModel : AbstractModel, IUserModel//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     {
         public int Id { get; set; }
 
@@ -15,7 +15,7 @@ namespace WowApp.Database.User
         public UserRole Role { get; set; }
 
 
-        public static UserModel CreateModel//Передаем сюда данные для создания модельки
+        public static UserModel CreateModel//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         (
             string firstName,
             string lastName,
@@ -23,7 +23,7 @@ namespace WowApp.Database.User
             UserRole role
         )
         {
-            return new UserModel()//Возвращаем объект
+            return new UserModel()//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             {
                 FirstName = firstName,
                 LastName = lastName,
