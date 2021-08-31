@@ -26,6 +26,12 @@ namespace WowApp.Database.Service
         }
 
 
+        public async Task<IUser> GetOne(int id)
+        {
+            return await _userRepository.GetOne(id);
+        }
+
+
         public string GetTitleMessage()
         {
             return "Hi from User Service";

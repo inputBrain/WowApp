@@ -14,6 +14,9 @@ namespace WowApp.Database.Service
         );
 
 
+        Task<IUser> GetOne(int id);
+
+
         string GetTitleMessage();
     }
 }

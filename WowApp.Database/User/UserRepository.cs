@@ -30,5 +30,17 @@ namespace WowApp.Database.User
 
             return model;
         }
+
+
+        public async Task<UserModel> GetOne(int id)
+        {
+            var model = await FindOne(id);
+            if (model == null)
+            {
+                throw new ErrorException(Error.DbError("User not found"));
+            }
+
+            return model;
+        }
     }
 }

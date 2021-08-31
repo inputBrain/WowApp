@@ -4,6 +4,9 @@ using WowApp.Database.Service;
 
 namespace WowApp.Host.Controllers
 {
+    [ApiController]
+    [Produces("application/json")]
+    [Route("api/[controller]/[action]")]
     public class CoreController : AbstractBaseController<CoreController>
     {
         private readonly IServiceContainer _serviceContainer;
@@ -16,7 +19,7 @@ namespace WowApp.Host.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_serviceContainer.UserService.GetTitleMessage());
+            return Ok(_serviceContainer.User.GetTitleMessage());
         }
     }
 }
