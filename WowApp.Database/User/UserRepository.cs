@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using WowApp.Model.User;
 
@@ -5,13 +6,13 @@ namespace WowApp.Database.User
 {
     public class UserRepository : AbstractRepository<UserModel>, IUserRepository
     {
-        public UserRepository(ILoggerFactory loggerFactory) : base(loggerFactory)
+        public UserRepository(PostgreSqlContext context, ILoggerFactory loggerFactory) : base(context, loggerFactory)
         {
             //��� �������� ��� - �� ������������
         }
 
-        public UserModel Create//��������� ������ ��� �������� ����� ��������
-            (
+
+        public async Task<UserModel> Create( //��������� ������ ��� �������� ����� ��������(
             string firstName,
             string lastName,
             string cover,
@@ -21,6 +22,11 @@ namespace WowApp.Database.User
         {
             var model = UserModel.CreateModel(firstName, lastName, cover, role);//���������� ������ � UserModel
 
+            var result = await CreateModelAsync(model);
+            if (result == null)
+            {
+
+            }
             return model;
         }
     }

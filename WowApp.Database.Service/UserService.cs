@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using WowApp.Database.User;
 using WowApp.Model.User;
@@ -28,7 +29,7 @@ namespace WowApp.Database.Service
         }
 
 
-        public UserModel Create(string firstName, string lastName, string cover, UserRole role)
+        public async Task<UserModel> Create(string firstName, string lastName, string cover, UserRole role)
         {
             //Подготовка данных. Например:
 
@@ -42,7 +43,7 @@ namespace WowApp.Database.Service
             //      cover += "Фоточка";
             // }
 
-            return _userRepository.Create(firstName, lastName, cover, role);
+            return await _userRepository.Create(firstName, lastName, cover, role);
         }
 
 

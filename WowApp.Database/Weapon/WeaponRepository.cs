@@ -6,7 +6,7 @@ namespace WowApp.Database.Weapon
 {
     public class WeaponRepository : AbstractRepository<WeaponModel>, IWeaponRepository
     {
-        public WeaponRepository(ILoggerFactory loggerFactory) : base(loggerFactory)
+        public WeaponRepository(PostgreSqlContext context, ILoggerFactory loggerFactory) : base(context, loggerFactory)
         {
 
         }
