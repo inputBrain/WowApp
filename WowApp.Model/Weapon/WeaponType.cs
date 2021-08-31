@@ -2,8 +2,8 @@
 {
     public enum WeaponType
     {
-        firearms = 0,
-        handToHand = 1,
-        explosives = 2
+        Firearms = 1,
+        HandToHand = 2,
+        Explosives = 3
     }
 }

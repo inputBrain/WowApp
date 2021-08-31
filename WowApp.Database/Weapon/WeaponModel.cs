@@ -1,4 +1,5 @@
 ﻿using WowApp.Model.Weapon;
+
 namespace WowApp.Database.Weapon
 {
     public class WeaponModel : AbstractModel, IWeapon
@@ -12,8 +13,7 @@ namespace WowApp.Database.Weapon
         public WeaponType Type { get; set; }
 
 
-        public static WeaponModel CreateModel
-        (
+        public static WeaponModel CreateModel(
             string name,
             int damage,
             float reloadTime,
@@ -28,9 +28,6 @@ namespace WowApp.Database.Weapon
                 ReloadTime = reloadTime,
                 Type = type
             };
-
         }
-
-
     }
 }

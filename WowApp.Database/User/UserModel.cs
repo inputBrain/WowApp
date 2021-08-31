@@ -2,7 +2,7 @@ using WowApp.Model.User;
 
 namespace WowApp.Database.User
 {
-    public class UserModel : AbstractModel, IUserModel//��������� ����� ����������� ������ ��������
+    public class UserModel : AbstractModel, IUserModel
     {
         public int Id { get; set; }
 
@@ -15,7 +15,7 @@ namespace WowApp.Database.User
         public UserRole Role { get; set; }
 
 
-        public static UserModel CreateModel//�������� ���� ������ ��� �������� ��������
+        public static UserModel CreateModel
         (
             string firstName,
             string lastName,
@@ -23,7 +23,7 @@ namespace WowApp.Database.User
             UserRole role
         )
         {
-            return new UserModel()//���������� ������
+            return new UserModel()
             {
                 FirstName = firstName,
                 LastName = lastName,
