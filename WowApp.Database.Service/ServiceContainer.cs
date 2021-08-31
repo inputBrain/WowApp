@@ -1,6 +1,5 @@
 namespace WowApp.Database.Service
 {
-    // Читать в UserService.
     internal class ServiceContainer : IServiceContainer
     {
         public IUserService UserService { get; }

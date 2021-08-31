@@ -4,8 +4,7 @@ namespace WowApp.Database.Weapon
 {
     public interface IWeaponRepository
     {
-        WeaponModel Create
-        (
+        WeaponModel Create(
             string name,
             int damage,
             float reloadTime,
