@@ -1,6 +1,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using WowApp.Client.Codec;
+using WowApp.Client.User;
 using WowApp.Database.Service;
 
 namespace WowApp.Host.Controllers.Admin
@@ -17,11 +19,12 @@ namespace WowApp.Host.Controllers.Admin
 
         //https://localhost:5001/api/admin/user/getone?id=1
         [HttpGet]
-        public async Task<IActionResult> GetOne(int id)
+        [ProducesResponseType(typeof(GetOneUser.Response), 200)]
+        public async Task<GetOneUser.Response> GetOne(int id)
         {
             var user = await _serviceContainer.User.GetOne(id);
 
-            return SendOk(user);
+            return new GetOneUser.Response(UserCodec.EncodeUser(user));
         }
     }
 }

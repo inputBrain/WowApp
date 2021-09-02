@@ -2,7 +2,6 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -15,6 +14,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\WowApp.Client.Codec\WowApp.Client.Codec.csproj" />
+      <ProjectReference Include="..\WowApp.Client\WowApp.Client.csproj" />
       <ProjectReference Include="..\WowApp.Database.Service\WowApp.Database.Service.csproj" />
       <ProjectReference Include="..\WowApp.Database\WowApp.Database.csproj" />
       <ProjectReference Include="..\WowApp.Model\WowApp.Model.csproj" />
