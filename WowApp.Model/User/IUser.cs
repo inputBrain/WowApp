@@ -14,5 +14,7 @@ namespace WowApp.Model.User
         string Cover { get; }
 
         UserRole Role { get; } // Enum - наш кастомный массив.
+
+        Status Status { get; }
     }
 }

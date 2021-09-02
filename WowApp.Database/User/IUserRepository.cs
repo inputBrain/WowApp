@@ -12,5 +12,8 @@ namespace WowApp.Database.User
             UserRole role
         );
 
+
+        Task<UserModel> GetOne(int id);
+
     }
 }

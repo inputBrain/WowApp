@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WowApp.Database.Service;
@@ -17,6 +18,15 @@ namespace WowApp.Host.Controllers
         public IActionResult Get()
         {
             return Ok(_serviceContainer.UserService.GetTitleMessage());
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetOne(int id)
+        {
+            var model = await _serviceContainer.UserService.GetOne(id);
+
+            return SendOk(model);
         }
     }
 }

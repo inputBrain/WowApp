@@ -2,7 +2,8 @@
 {
     public interface IWeapon
     {
-        string Name { get; }
+        int Id { get; }
+        string Title { get; }
         int Damage { get; }
         float ReloadTime { get; }
         WeaponType Type { get; }
