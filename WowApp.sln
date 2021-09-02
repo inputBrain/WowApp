@@ -10,6 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowApp.Database.Service", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowApp.Database.Test", "WowApp.Database.Test\WowApp.Database.Test.csproj", "{0E9FD4EA-A358-4B44-A778-8E46329944B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowApp.Client", "WowApp.Client\WowApp.Client.csproj", "{020DA1CF-B5D3-4567-9097-FDC405B01B33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowApp.Client.Codec", "WowApp.Client.Codec\WowApp.Client.Codec.csproj", "{FD2AB553-EB72-46BD-AC47-79E5EC8D9954}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{0E9FD4EA-A358-4B44-A778-8E46329944B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E9FD4EA-A358-4B44-A778-8E46329944B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E9FD4EA-A358-4B44-A778-8E46329944B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{020DA1CF-B5D3-4567-9097-FDC405B01B33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{020DA1CF-B5D3-4567-9097-FDC405B01B33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020DA1CF-B5D3-4567-9097-FDC405B01B33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{020DA1CF-B5D3-4567-9097-FDC405B01B33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD2AB553-EB72-46BD-AC47-79E5EC8D9954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2AB553-EB72-46BD-AC47-79E5EC8D9954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD2AB553-EB72-46BD-AC47-79E5EC8D9954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2AB553-EB72-46BD-AC47-79E5EC8D9954}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
