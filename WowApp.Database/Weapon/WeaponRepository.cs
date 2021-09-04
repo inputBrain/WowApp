@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using WowApp.Model.Weapon;
 using System;
+using System.Threading.Tasks;
+using WowApp.Model.Error;
 
 namespace WowApp.Database.Weapon
 {
@@ -26,5 +28,17 @@ namespace WowApp.Database.Weapon
         }
 
 
+        public async Task<WeaponModel> GetOne(int id)
+        {
+            var model = await FindOne(id);
+            if (model == null)
+            {
+                throw new ErrorException(Error.DbError("Weapon not found"));
+            }
+
+            return model;
+
+
+        }
     }
 }

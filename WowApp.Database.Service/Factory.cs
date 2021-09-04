@@ -5,8 +5,7 @@ namespace WowApp.Database.Service
     // Dependency Injection... + Паттерн проектирования Абстрактная Фабрика
     public class Factory
     {
-        public static IServiceContainer Create
-        (
+        public static IServiceContainer Create(
             ILoggerFactory loggerFactory,
             IDatabaseContainer databaseContainer
         )
@@ -17,6 +16,14 @@ namespace WowApp.Database.Service
                 (
                     loggerFactory.CreateLogger<UserService>(),
                     databaseContainer.User
+                ),
+                new WeaponService
+                (
+                    databaseContainer.Weapon
+                ),
+                new ArmorService
+                (
+                    databaseContainer.Armor
                 )
             );
         }

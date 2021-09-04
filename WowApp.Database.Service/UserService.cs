@@ -53,6 +53,12 @@ namespace WowApp.Database.Service
         }
 
 
+        public async Task<UserModel> GetFull(int id)
+        {
+            return await _userRepository.GetFull(id);
+        }
+
+
         public string GetTitleMessage()
         {
             return "Hi from User Service";

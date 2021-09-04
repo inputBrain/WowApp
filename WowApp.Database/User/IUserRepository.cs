@@ -15,5 +15,8 @@ namespace WowApp.Database.User
 
         Task<UserModel> GetOne(int id);
 
+
+        Task<UserModel> GetFull(int id);
+
     }
 }

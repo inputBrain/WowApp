@@ -1,4 +1,5 @@
-using WowApp.Database.Clothing;
+using WowApp.Database.Armor;
+using WowApp.Database.Inventory;
 using WowApp.Database.User;
 using WowApp.Database.Weapon;
 
@@ -8,6 +9,8 @@ namespace WowApp.Database
     {
         IUserRepository User { get; }
         IWeaponRepository Weapon { get; }
-        IClothingRepository Clothing { get; }
+        IArmorRepository Armor { get; }
+
+        IInventoryRepository Inventory { get; }
     }
 }

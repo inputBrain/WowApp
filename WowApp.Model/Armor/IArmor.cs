@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace WowApp.Model.Clothing
+﻿namespace WowApp.Model.Armor
 {
-    public interface IClothing
+    public interface IArmor
     {
         int Id { get; }
         string Title { get; }
         float Defence { get; }
         float Weight { get; }
         float TemperatureProtection { get; }
-        ClothingType Type { get; }
+        ArmorType Type { get; }
     }
 }

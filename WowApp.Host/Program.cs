@@ -147,7 +147,6 @@ namespace WowApp.Host
                 webHost.RunAsync()
             );
 
-            Console.Read();
             await Task.WhenAll
             (
                 webHost.StopAsync()

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using WowApp.Database.Clothing;
+using WowApp.Database.Armor;
 using WowApp.Database.Explosive;
 using WowApp.Database.Inventory;
 using WowApp.Database.User;
@@ -19,8 +19,8 @@ namespace WowApp.Database
         public DbSet<ExplosiveModel> Explosive { get; set; }
 
         public DbSet<InventoryModel> Inventory { get; set; }
-        
-        public DbSet<ClothingModel> Clothing { get; set; }
+
+        public DbSet<ArmorModel> Armor { get; set; }
 
 
         public PostgreSqlContext
@@ -31,7 +31,8 @@ namespace WowApp.Database
             (
                 new UserRepository(this, loggerFactory),
                 new WeaponRepository(this, loggerFactory),
-                new ClothingRepository(this, loggerFactory)
+                new ArmorRepository(this, loggerFactory),
+                new InventoryRepository(this, loggerFactory)
             );
         }
 

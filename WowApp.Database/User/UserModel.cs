@@ -1,12 +1,13 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using WowApp.Database.Clothing;
+using WowApp.Database.Armor;
 using WowApp.Database.Inventory;
 using WowApp.Model.User;
 
 namespace WowApp.Database.User
 {
-    public class UserModel : AbstractModel, IUserModel//��������� ����� ����������� ������ ��������
+    public class UserModel : AbstractModel, IUser//��������� ����� ����������� ������ ��������
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -28,10 +29,10 @@ namespace WowApp.Database.User
         public Status Status { get; set; }
 
         [Required]
-        public InventoryModel? Inventory { get; set; }
-        
-        [Required]
-        public ClothingModel Clothing { get; set; }
+        public InventoryModel Inventory { get; set; }
+        //
+        // [Required]
+        // public List<ArmorModel> Armors { get; set; }
 
 
         public static UserModel CreateModel//�������� ���� ������ ��� �������� ��������
@@ -48,8 +49,8 @@ namespace WowApp.Database.User
                 LastName = lastName,
                 Cover = cover,
                 Role = role,
-                Inventory = new InventoryModel(),
-                Clothing = new ClothingModel()
+                Inventory = InventoryModel.CreateEmpty(),
+                // Armors = new List<ArmorModel>()
             };
         }
     }

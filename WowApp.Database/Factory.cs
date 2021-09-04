@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Logging;
-using WowApp.Database.Clothing;
+using WowApp.Database.Armor;
+using WowApp.Database.Inventory;
 using WowApp.Database.User;
 using WowApp.Database.Weapon;
 
@@ -12,7 +13,8 @@ namespace WowApp.Database
             return new DatabaseContainer(
                 new UserRepository(db, loggerFactory),
                 new WeaponRepository(db, loggerFactory),
-                new ClothingRepository(db, loggerFactory)
+                new ArmorRepository(db, loggerFactory),
+                new InventoryRepository(db, loggerFactory)
             );
         }
     }

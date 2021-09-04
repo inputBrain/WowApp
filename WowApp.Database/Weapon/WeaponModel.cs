@@ -40,8 +40,8 @@ namespace WowApp.Database.Weapon
                 Title = title,
                 Damage = damage,
                 ReloadTime = reloadTime,
-                Type = type
-                // Explosive = new ExplosiveModel()
+                Type = type,
+                Explosive = new ExplosiveModel()
             };
         }
     }

@@ -20,6 +20,17 @@ namespace WowApp.Database.Test.User
         {
             var model = _userRepository.Create("First name", "Last name", "Cover", UserRole.Admin).Result;
             Assert.Equal("First name", model.FirstName);
+
+            Assert.Equal(0, model.Inventory.Money);
+
+            var getFullUser = _userRepository.GetFull(model.Id).Result;
+            Assert.NotNull(getFullUser);
+
+
+            Assert.Equal(getFullUser.FirstName, model.FirstName);
+            Assert.Equal(getFullUser.Inventory, model.Inventory);
+            Assert.Equal(getFullUser.Inventory.MaxSize, model.Inventory.MaxSize);
+
         }
     }
 }

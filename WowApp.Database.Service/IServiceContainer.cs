@@ -4,5 +4,8 @@ namespace WowApp.Database.Service
     public interface IServiceContainer
     {
         IUserService UserService { get; }
+        IWeaponService WeaponService { get; }
+
+        IArmorService ArmorService { get; }
     }
 }
