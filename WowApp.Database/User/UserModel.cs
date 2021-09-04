@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WowApp.Database.Clothing;
 using WowApp.Database.Inventory;
 using WowApp.Model.User;
 
@@ -26,9 +27,11 @@ namespace WowApp.Database.User
         [Required]
         public Status Status { get; set; }
 
-
         [Required]
-        public InventoryModel Inventory { get; set; }
+        public InventoryModel? Inventory { get; set; }
+        
+        [Required]
+        public ClothingModel Clothing { get; set; }
 
 
         public static UserModel CreateModel//�������� ���� ������ ��� �������� ��������
@@ -45,7 +48,8 @@ namespace WowApp.Database.User
                 LastName = lastName,
                 Cover = cover,
                 Role = role,
-                Inventory = new InventoryModel()
+                Inventory = new InventoryModel(),
+                Clothing = new ClothingModel()
             };
         }
     }

@@ -14,7 +14,7 @@ namespace WowApp.Database.Test
         public Fixture(PostgreSqlContext postgreSqlContext)
         {
             _postgreSqlContext = postgreSqlContext;
-            DatabaseContainer = (DatabaseContainer)postgreSqlContext.Db;
+            DatabaseContainer = (DatabaseContainer) postgreSqlContext.Db;
         }
 
 
@@ -22,12 +22,13 @@ namespace WowApp.Database.Test
         {
             var guid = Guid.NewGuid().ToString("N");
             var option = new DbContextOptionsBuilder<PostgreSqlContext>()
-                         .UseNpgsql
-                         (
-                             "User ID=postgres;Password=123;Host=localhost;Port=5432;Database=wowapp_test_" + guid + ";Pooling=true;",
-                             b => b.MigrationsAssembly(typeof(Startup).Assembly.GetName().Name)
-                         )
-                         .Options;
+                .UseNpgsql
+                (
+                    "User ID=postgres;Password=123;Host=localhost;Port=5432;Database=wowapp_test_" + guid +
+                    ";Pooling=true;",
+                    b => b.MigrationsAssembly(typeof(Startup).Assembly.GetName().Name)
+                )
+                .Options;
             var content = new PostgreSqlContext(option, new NullLoggerFactory());
             content.Database.Migrate();
             return new Fixture(content);

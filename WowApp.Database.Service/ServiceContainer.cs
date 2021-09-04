@@ -6,7 +6,8 @@ namespace WowApp.Database.Service
         public IUserService UserService { get; }
 
 
-        public ServiceContainer(
+        public ServiceContainer
+        (
             IUserService userService
         )
         {

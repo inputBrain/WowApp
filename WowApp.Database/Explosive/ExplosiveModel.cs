@@ -14,7 +14,7 @@ namespace WowApp.Database.Explosive
         public int WeaponId { get; set; }
 
         [ForeignKey("WeaponId")]
-        public WeaponModel Weapon { get; set; }
+        public WeaponModel? Weapon { get; set; }
 
         [Required]
         public float Range { get; set; }

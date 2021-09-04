@@ -1,3 +1,4 @@
+using WowApp.Database.Clothing;
 using WowApp.Database.User;
 using WowApp.Database.Weapon;
 
@@ -11,15 +12,19 @@ namespace WowApp.Database
     {
         public IUserRepository User { get; }
         public IWeaponRepository Weapon { get; }
+        public IClothingRepository Clothing { get; }
+
 
 
         public DatabaseContainer(
             IUserRepository user,
-            IWeaponRepository weapon
+            IWeaponRepository weapon,
+            IClothingRepository clothing
         )
         {
-            User = user;
+            User = user;    
             Weapon = weapon;
+            Clothing = clothing;
         }
     }
 }

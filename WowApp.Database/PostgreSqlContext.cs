@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using WowApp.Database.Clothing;
 using WowApp.Database.Explosive;
 using WowApp.Database.Inventory;
 using WowApp.Database.User;
@@ -18,16 +19,19 @@ namespace WowApp.Database
         public DbSet<ExplosiveModel> Explosive { get; set; }
 
         public DbSet<InventoryModel> Inventory { get; set; }
+        
+        public DbSet<ClothingModel> Clothing { get; set; }
 
 
-        public PostgreSqlContext(
-            DbContextOptions<PostgreSqlContext> options,
-            ILoggerFactory loggerFactory
-        ) : base(options)
+        public PostgreSqlContext
+        (
+            DbContextOptions<PostgreSqlContext> options, ILoggerFactory loggerFactory) : base(options)
         {
-            Db = new DatabaseContainer(
+            Db = new DatabaseContainer
+            (
                 new UserRepository(this, loggerFactory),
-                new WeaponRepository(this, loggerFactory)
+                new WeaponRepository(this, loggerFactory),
+                new ClothingRepository(this, loggerFactory)
             );
         }
 
@@ -35,9 +39,9 @@ namespace WowApp.Database
         //TODO:
         // protected override void OnModelCreating(ModelBuilder modelBuilder)
         // {
-            // modelBuilder.Entity<WeaponModel>()
-                        // .HasOne(x => x.Explosive)
-                        // .WithMany(x => x.)
+        // modelBuilder.Entity<WeaponModel>()
+        // .HasOne(x => x.Explosive)
+        // .WithMany(x => x.)
         // }
     }
 }
