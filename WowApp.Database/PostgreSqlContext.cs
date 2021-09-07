@@ -14,7 +14,7 @@ namespace WowApp.Database
 
         public DbSet<ArmorModel> Armor { get; set; }
 
-        // public DbSet<WeaponModel> Weapon { get; set; }
+        public DbSet<WeaponModel> Weapon { get; set; }
 
 
         public PostgreSqlContext(DbContextOptions<PostgreSqlContext> options, ILoggerFactory loggerFactory) : base(options)

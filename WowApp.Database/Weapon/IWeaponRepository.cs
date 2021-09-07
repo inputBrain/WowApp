@@ -1,4 +1,5 @@
-﻿using WowApp.Model.Weapon;
+﻿using System.Threading.Tasks;
+using WowApp.Model.Weapon;
 
 namespace WowApp.Database.Weapon
 {
@@ -11,5 +12,8 @@ namespace WowApp.Database.Weapon
             WeaponType type,
             float range
         );
+
+
+        Task<WeaponModel> GetOne(int id);
     }
 }
