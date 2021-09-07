@@ -16,10 +16,5 @@ namespace WowApp.Host.Controllers
             _serviceContainer = serviceContainer;
         }
 
-        [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok(_serviceContainer.User.GetTitleMessage());
-        }
     }
 }

@@ -4,12 +4,12 @@ namespace WowApp.Model.User
     {
         int Id { get; }
 
-        string FirstName { get; }
+        string Nickname { get; }
 
-        string LastName { get; }
+        int Hp { get; }
 
-        string Cover { get; }
+        int Experience { get; }
 
-        UserRole Role { get; }
+        int Level { get; }
     }
 }

@@ -9,7 +9,7 @@ using WowApp.Database;
 namespace WowApp.Host.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    [Migration("20210830155441_initUser")]
+    [Migration("20210907013012_initUser")]
     partial class initUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,17 +27,18 @@ namespace WowApp.Host.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Cover")
-                        .HasColumnType("text");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("text");
-
-                    b.Property<int>("Role")
+                    b.Property<int>("Experience")
                         .HasColumnType("integer");
+
+                    b.Property<int>("Hp")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Nickname")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 

@@ -13,10 +13,10 @@ namespace WowApp.Host.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    Cover = table.Column<string>(nullable: true),
-                    Role = table.Column<int>(nullable: false)
+                    Nickname = table.Column<string>(nullable: false),
+                    Hp = table.Column<int>(nullable: false),
+                    Experience = table.Column<int>(nullable: false),
+                    Level = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

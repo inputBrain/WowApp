@@ -18,6 +18,53 @@ namespace WowApp.Host.Migrations
                 .HasAnnotation("ProductVersion", "3.1.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            modelBuilder.Entity("WowApp.Database.Armor.ArmorModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("BuyPrice")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Cover")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("EnhanceLevel")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Grade")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MagicalDefence")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("PhysicDefence")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("RequiredLevel")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("SalePrice")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Armor");
+                });
+
             modelBuilder.Entity("WowApp.Database.User.UserModel", b =>
                 {
                     b.Property<int>("Id")
@@ -25,17 +72,18 @@ namespace WowApp.Host.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Cover")
-                        .HasColumnType("text");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("text");
-
-                    b.Property<int>("Role")
+                    b.Property<int>("Experience")
                         .HasColumnType("integer");
+
+                    b.Property<int>("Hp")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Nickname")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 

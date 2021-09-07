@@ -1,5 +1,4 @@
 using WowApp.Database.User;
-using WowApp.Model.User;
 using Xunit;
 
 namespace WowApp.Database.Test.User
@@ -18,8 +17,7 @@ namespace WowApp.Database.Test.User
         [Fact]
         public void CreateUser()
         {
-            var model = _userRepository.Create("First name", "Last name", "Cover", UserRole.Admin).Result;
-            Assert.Equal("First name", model.FirstName);
+
         }
     }
 }

@@ -10,6 +10,7 @@ namespace WowApp.Database.Service
         private readonly ILogger<UserService> _logger;
         private readonly IUserRepository _userRepository;
 
+
         public UserService(
             ILogger<UserService> logger,
             IUserRepository userRepository
@@ -20,21 +21,17 @@ namespace WowApp.Database.Service
         }
 
 
-        public async Task<UserModel> Create(string firstName, string lastName, string cover, UserRole role)
-        {
-            return await _userRepository.Create(firstName, lastName, cover, role);
-        }
-
-
         public async Task<IUser> GetOne(int id)
         {
             return await _userRepository.GetOne(id);
         }
 
 
-        public string GetTitleMessage()
+        public async Task<UserModel> GetFull(int id)
         {
-            return "Hi from User Service";
+            return await _userRepository.GetFull(id);
         }
+
+
     }
 }
