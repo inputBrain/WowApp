@@ -34,6 +34,12 @@ namespace WowApp.Database
             var model = await DbModel.FindAsync(id);
             return model;
         }
+        
+        protected async Task<T> FindTitle(int id)
+        {
+            var model = await DbModel.FindAsync(id);
+            return model;
+        }
 
 
         protected async Task<T> CreateModelAsync(T model)

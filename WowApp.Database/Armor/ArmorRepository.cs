@@ -42,5 +42,15 @@ namespace WowApp.Database.Armor
             }
             return model;
         }
+
+        public async Task<ArmorModel> GetTitle(int id)
+        {
+            var model = await FindOne(id);
+            if (model == null)
+            {
+                throw new ErrorException(Error.DbError("Armor not found"));
+            }
+            return model;
+        }
     }
 }

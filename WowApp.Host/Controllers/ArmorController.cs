@@ -20,5 +20,12 @@ namespace WowApp.Host.Controllers
             var model = await _serviceContainer.ArmorService.GetOne(id);
             return SendOk(model);
         }
+        
+        [HttpGet]
+        public async Task<IActionResult> GetArmorTitle(int id)
+        {
+            var model = await _serviceContainer.ArmorService.GetTitle(id);
+            return SendOk(model.Title);
+        }
     }
 }

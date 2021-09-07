@@ -6,5 +6,6 @@ namespace WowApp.Database.Service
     public interface IArmorService
     {
         Task<ArmorModel> GetOne(int id);
+        Task<ArmorModel> GetTitle(int id);
     }
 }

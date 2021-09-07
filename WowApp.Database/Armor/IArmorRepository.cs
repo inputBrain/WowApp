@@ -15,6 +15,7 @@ namespace WowApp.Database.Armor
 
 
         Task<ArmorModel> GetOne(int id);
+        Task<ArmorModel> GetTitle(int id);
 
     }
 }

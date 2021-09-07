@@ -18,5 +18,10 @@ namespace WowApp.Database.Service
         {
             return await _armorRepository.GetOne(id);
         }
+
+        public async Task<ArmorModel> GetTitle(int id)
+        {
+            return await _armorRepository.GetTitle(id);
+        }
     }
 }

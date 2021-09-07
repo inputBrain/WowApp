@@ -19,6 +19,7 @@ namespace WowApp.Host.Controllers
             var model = await _serviceContainer.WeaponService.GetOne(id);
             return SendOk(model);
         }
+        
 
     }
 }
