@@ -10,10 +10,9 @@ namespace WowApp.Database.Service
         )
         {
             return new ServiceContainer(
-                new UserService(
-                    loggerFactory.CreateLogger<UserService>(),
-                    databaseContainer.User
-                )
+                new UserService(loggerFactory.CreateLogger<UserService>(), databaseContainer.User),
+                new ArmorService(databaseContainer.Armor),
+                new WeaponService(databaseContainer.Weapon)
             );
         }
     }
