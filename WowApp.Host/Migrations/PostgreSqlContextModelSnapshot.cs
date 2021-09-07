@@ -38,10 +38,10 @@ namespace WowApp.Host.Migrations
                     b.Property<int>("Grade")
                         .HasColumnType("integer");
 
-                    b.Property<int>("MagicalDefence")
+                    b.Property<int>("MDef")
                         .HasColumnType("integer");
 
-                    b.Property<int>("PhysicDefence")
+                    b.Property<int>("PDef")
                         .HasColumnType("integer");
 
                     b.Property<int>("RequiredLevel")

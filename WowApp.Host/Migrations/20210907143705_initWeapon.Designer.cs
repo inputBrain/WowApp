@@ -9,8 +9,8 @@ using WowApp.Database;
 namespace WowApp.Host.Migrations
 {
     [DbContext(typeof(PostgreSqlContext))]
-    [Migration("20210907020319_initArmor")]
-    partial class initArmor
+    [Migration("20210907143705_initWeapon")]
+    partial class initWeapon
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,10 +40,10 @@ namespace WowApp.Host.Migrations
                     b.Property<int>("Grade")
                         .HasColumnType("integer");
 
-                    b.Property<int>("MagicalDefence")
+                    b.Property<int>("MDef")
                         .HasColumnType("integer");
 
-                    b.Property<int>("PhysicDefence")
+                    b.Property<int>("PDef")
                         .HasColumnType("integer");
 
                     b.Property<int>("RequiredLevel")
@@ -90,6 +90,50 @@ namespace WowApp.Host.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("WowApp.Database.Weapon.WeaponModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("BuyPrice")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Cover")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Damage")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("EnhanceLevel")
+                        .HasColumnType("integer");
+
+                    b.Property<float>("ReloadTime")
+                        .HasColumnType("real");
+
+                    b.Property<int>("RequiredLevel")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("SalePrice")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Weapon");
                 });
 #pragma warning restore 612, 618
         }

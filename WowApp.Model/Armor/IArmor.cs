@@ -16,9 +16,9 @@
 
         int RequiredLevel { get; }
 
-        int PhysicDefence { get; }
+        int PDef { get; }
 
-        int MagicalDefence { get; }
+        int MDef { get; }
 
         int Weight { get; }
 

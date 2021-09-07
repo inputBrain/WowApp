@@ -19,8 +19,8 @@ namespace WowApp.Host.Migrations
                     Grade = table.Column<int>(nullable: false),
                     Type = table.Column<int>(nullable: false),
                     RequiredLevel = table.Column<int>(nullable: false),
-                    PhysicDefence = table.Column<int>(nullable: false),
-                    MagicalDefence = table.Column<int>(nullable: false),
+                    PDef = table.Column<int>(nullable: false),
+                    MDef = table.Column<int>(nullable: false),
                     Weight = table.Column<int>(nullable: false),
                     BuyPrice = table.Column<int>(nullable: false),
                     SalePrice = table.Column<int>(nullable: false)

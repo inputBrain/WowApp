@@ -29,10 +29,10 @@ namespace WowApp.Database.Armor
         public int RequiredLevel { get; set; }
 
         [Required]
-        public int PhysicDefence { get; set; }
+        public int PDef { get; set; }
 
         [Required]
-        public int MagicalDefence { get; set; }
+        public int MDef { get; set; }
 
         [Required]
         public int Weight { get; set; }
