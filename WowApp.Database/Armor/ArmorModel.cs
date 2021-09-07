@@ -10,39 +10,46 @@ namespace WowApp.Database.Armor
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
-        public string Title { get; set; }
-
-
-        //TODO: Def, Wei, Tem...
-        [Required]
-        public float Defence { get; set; }
-
-        [Required]
-        public float Weight { get; set; }
-
-        [Required]
-        public float TemperatureProtection { get; set; }
-
-        [Required]
-        public ArmorType Type { get; set; }
+        [Required] public string Title { get; set; }
+        [Required] public string Cover { get; set; }
+        [Required] public int RequiredLevel { get; set; }
+        [Required] public int PDef { get; set; }
+        [Required] public int MDef { get; set; }
+        [Required] public float EnhanceLevel { get; set; }
+        [Required] public float Weight { get; set; }
+        [Required] public float BuyPrice { get; set; }
+        [Required] public float SalePrice { get; set; }
+        [Required] public ArmorType Type { get; set; }
+        [Required] public ArmorGrade Grade { get; set; }
 
 
         public static ArmorModel CreateModel(
             string title,
-            float defence,
+            string cover,
+            int requiredLevel,
+            int pDef,
+            int mDef,
+            float enhanceLevel,
             float weight,
-            float temperatureProtection,
-            ArmorType type
+            float buyPrice,
+            float salePrice,
+            ArmorType type,
+            ArmorGrade grade
         )
         {
             return new ArmorModel()
             {
                 Title = title,
-                Defence = defence,
+                Cover = cover,
+                RequiredLevel = requiredLevel,
+                PDef = pDef,
+                MDef = mDef,
+                EnhanceLevel = enhanceLevel,
                 Weight = weight,
-                TemperatureProtection = temperatureProtection,
-                Type = type
+                BuyPrice = buyPrice,
+                SalePrice = salePrice,
+                Type = type,
+                Grade = grade
             };
         }
     }

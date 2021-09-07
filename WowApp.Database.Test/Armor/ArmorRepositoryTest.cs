@@ -19,10 +19,16 @@ namespace WowApp.Database.Test.Armor
         {
             var model = _armorRepository.Create(
                 "Title",
-                5.53F,
-                8.8F,
-                10.0F,
-                ArmorType.Footwear
+                "Cover",
+                0,
+                0,
+                0,
+                0,
+                1f,
+                0,
+                0,
+                0,
+                0
             ).Result;
 
 

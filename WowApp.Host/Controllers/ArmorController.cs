@@ -18,7 +18,7 @@ namespace WowApp.Host.Controllers
         public async Task<IActionResult> GetArmor(int id)
         {
             var model = await _serviceContainer.ArmorService.GetOne(id);
-            return SendOk(model);
+            return SendOk($"Title:{model.Title}, Cover:{model.Cover}, Weight:{model.Weight}");
         }
         
         [HttpGet]

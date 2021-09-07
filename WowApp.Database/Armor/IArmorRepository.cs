@@ -7,10 +7,16 @@ namespace WowApp.Database.Armor
     {
         Task<ArmorModel> Create(
             string title,
-            float defence,
+            string cover,
+            int requiredLevel,
+            int pDef,
+            int mDef,
+            float enhanceLevel,
             float weight,
-            float temperatureProtection,
-            ArmorType type
+            float buyPrice,
+            float salePrice,
+            ArmorType type,
+            ArmorGrade grade
         );
 
 

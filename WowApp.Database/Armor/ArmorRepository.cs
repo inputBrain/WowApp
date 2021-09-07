@@ -1,5 +1,4 @@
-﻿
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using WowApp.Model.Armor;
 using WowApp.Model.Error;
@@ -10,21 +9,15 @@ namespace WowApp.Database.Armor
     {
         public ArmorRepository(PostgreSqlContext context, ILoggerFactory loggerFactory) : base(context, loggerFactory)
         {
-
         }
 
-        public async Task<ArmorModel> Create(
-            string title,
-            float defence,
-            float weight,
-            float temperatureProtection,
-            ArmorType type
-        )
+
+        public async Task<ArmorModel> Create(string title, string cover, int requiredLevel, int pDef, int mDef, float enhanceLevel, float weight, float buyPrice, float salePrice, ArmorType type, ArmorGrade grade)
         {
-            var model = ArmorModel.CreateModel(title, defence, weight, temperatureProtection, type);
+            var model = ArmorModel.CreateModel(title, cover, requiredLevel, pDef, mDef, enhanceLevel, weight, buyPrice, salePrice, type, grade);
 
             var result = await CreateModelAsync(model);
-            if (result == null)
+            if (result is null)
             {
                 throw new ErrorException(Error.DbError("Armor not created"));
             }
@@ -32,11 +25,10 @@ namespace WowApp.Database.Armor
             return model;
         }
 
-
         public async Task<ArmorModel> GetOne(int id)
         {
             var model = await FindOne(id);
-            if (model == null)
+            if (model is null)
             {
                 throw new ErrorException(Error.DbError("Armor not found"));
             }
@@ -46,10 +38,11 @@ namespace WowApp.Database.Armor
         public async Task<ArmorModel> GetTitle(int id)
         {
             var model = await FindOne(id);
-            if (model == null)
+            if (model is null)
             {
                 throw new ErrorException(Error.DbError("Armor not found"));
             }
+
             return model;
         }
     }
