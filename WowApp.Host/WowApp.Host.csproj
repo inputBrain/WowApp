@@ -18,4 +18,8 @@
       <ProjectReference Include="..\WowApp.Model\WowApp.Model.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Migrations" />
+    </ItemGroup>
+
 </Project>

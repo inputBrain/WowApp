@@ -28,24 +28,10 @@ namespace WowApp.Database.Service
             _userRepository = userRepository;
         }
 
-
-        public async Task<UserModel> Create(string firstName, string lastName, string cover, UserRole role)
+        public Task<UserModel> Create(string nickname, float hp, uint level, float experience)
         {
-            //Подготовка данных. Например:
-
-            // var nameToLower = firstName.ToLower();
-            // return _userRepository.Create(nameToLower, ...)
-
-            // или:
-
-            // if(cover == null)
-            // {
-            //      cover += "Фоточка";
-            // }
-
-            return await _userRepository.Create(firstName, lastName, cover, role);
+            throw new System.NotImplementedException();
         }
-
 
         public async Task<IUser> GetOne(int id)
         {

@@ -101,23 +101,18 @@ namespace WowApp.Host.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<string>("Cover")
+                    b.Property<float>("Experience")
+                        .HasColumnType("real");
+
+                    b.Property<float>("Hp")
+                        .HasColumnType("real");
+
+                    b.Property<long>("Level")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Nickname")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("Role")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

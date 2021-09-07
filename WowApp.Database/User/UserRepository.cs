@@ -11,28 +11,27 @@ namespace WowApp.Database.User
     {
         public UserRepository(PostgreSqlContext context, ILoggerFactory loggerFactory) : base(context, loggerFactory)
         {
-            //��� �������� ��� - �� ������������
+           //Так и не понял, что тут творится
         }
 
 
-        public async Task<UserModel> Create( //��������� ������ ��� �������� ����� ��������(
-            string firstName,
-            string lastName,
-            string cover,
-            UserRole role
-        )
 
+      
+
+
+        public async Task<UserModel> Create(string nickname, float hp, uint level, float experience)
         {
-            var model = UserModel.CreateModel(firstName, lastName, cover, role);//���������� ������ � UserModel
-
-            var result = await CreateModelAsync(model);
-            if (result == null)
             {
+                var model = UserModel.CreateModel(nickname, hp, level, experience);
 
+                var result = await CreateModelAsync(model);
+                if (result is null)
+                {
+                    throw new ErrorException(Error.DbError("User not create"));
+                }
+                return model;
             }
-            return model;
         }
-
 
         public async Task<UserModel> GetOne(int id)
         {
@@ -41,7 +40,6 @@ namespace WowApp.Database.User
             {
                 throw new ErrorException(Error.DbError("User not found"));
             }
-
             return model;
         }
 

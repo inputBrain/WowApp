@@ -18,16 +18,17 @@ namespace WowApp.Database.Test.User
         [Fact]
         public void CreateUser()
         {
-            var model = _userRepository.Create("First name", "Last name", "Cover", UserRole.Admin).Result;
-            Assert.Equal("First name", model.FirstName);
+            var model = _userRepository.Create("Nickname", 3f, 0, 0).Result;
+            Assert.Equal("Nickname", model.Nickname);//pass
 
-            Assert.Equal(0, model.Inventory.Money);
+            Assert.Equal(0, model.Inventory.Money);//pass
+            
 
             var getFullUser = _userRepository.GetFull(model.Id).Result;
             Assert.NotNull(getFullUser);
 
 
-            Assert.Equal(getFullUser.FirstName, model.FirstName);
+            Assert.Equal(getFullUser.Nickname, model.Nickname);
             Assert.Equal(getFullUser.Inventory, model.Inventory);
             Assert.Equal(getFullUser.Inventory.MaxSize, model.Inventory.MaxSize);
 

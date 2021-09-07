@@ -5,16 +5,9 @@ namespace WowApp.Model.User
     // Здесь не должно быть ничего кроме самих полей
     public interface IUser
     {
-        int Id { get; }
-
-        string FirstName { get; }
-
-        string LastName { get; }
-
-        string Cover { get; }
-
-        UserRole Role { get; } // Enum - наш кастомный массив.
-
-        Status Status { get; }
+        string Nickname { get; }
+        float Hp { get; }
+        uint Level { get; }
+        float Experience { get; }
     }
 }

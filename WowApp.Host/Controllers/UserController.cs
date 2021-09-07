@@ -7,12 +7,12 @@ namespace WowApp.Host.Controllers
 {
     public class UserController : AbstractBaseController<UserController>
     {
-        private readonly IServiceContainer _sc;
+        private readonly IServiceContainer serviceContainer;
 
 
         public UserController(ILogger<UserController> logger, IServiceContainer sc) : base(logger)
         {
-            _sc = sc;
+            serviceContainer = sc;
         }
 
 
@@ -20,7 +20,7 @@ namespace WowApp.Host.Controllers
 
         public async Task<IActionResult> GetOne(int id)
         {
-            var model = await _sc.UserService.GetOne(id);
+            var model = await serviceContainer.UserService.GetOne(id);
             return SendOk(model);
         }
     }

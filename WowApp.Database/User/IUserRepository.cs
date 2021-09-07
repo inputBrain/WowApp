@@ -3,13 +3,13 @@ using WowApp.Model.User;
 
 namespace WowApp.Database.User
 {
-    public interface IUserRepository//����������� �������� User'a
+    public interface IUserRepository
     {
         Task<UserModel> Create(
-            string firstName,
-            string lastName,
-            string cover,
-            UserRole role
+            string nickname,
+            float hp,
+            uint level,
+            float experience
         );
 
 
