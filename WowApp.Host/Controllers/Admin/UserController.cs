@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -31,36 +32,35 @@ namespace WowApp.Host.Controllers.Admin
         }
 
         [HttpGet]
-        public void GetRandomChance(int chance = 0)
+        public void GetGiftByChance(int chance = 2)
         {
-
-            var robot = 0;
-            var box = 0;
+            var gift = 0;
+            var boxNumber = 0;
             var firstBox = 0;
-            var opeens = new List<int>();
+            var boxNumberCollection = new List<int>();
             var random = new Random();
 
             do
             {
-                box++;
-                var randomNumber = random.Next(0, 100);
-                if (randomNumber <= chance)
-                {
-                    robot++;
-                    opeens.Add(box);
-                    if (box == 1)
+                boxNumber++;
+                var randomChance = random.Next(0, 100);
+                if (randomChance <= chance)
+                { 
+                    gift++;
+                    boxNumberCollection.Add(boxNumber);
+                    if (boxNumber == 1)
                     {
                         firstBox++;
                     }
-                    // Console.WriteLine($"Attempts: {attempt}. Successful. You get gift");
-                    box = 0;
+                    // Console.WriteLine($"Success! Box number #: {boxNumber}. You got the gift");
+                    boxNumber = 0;
                 }
-            } while (robot <= 9999999);
+            } while (gift <= 999999);
 
-            var avg = opeens.Average();
+            var avg = boxNumberCollection.Average();
             
-            Console.WriteLine($"Avarage attempt: {avg}. Successful. You get gift");
-            Console.WriteLine($"First times: {firstBox}. Wowow");
+            Console.WriteLine($"In average, you need to open: {avg} boxes to get the gift.");
+            Console.WriteLine($"\n You got the gift from the first box: {firstBox} times");
 
             
         }
