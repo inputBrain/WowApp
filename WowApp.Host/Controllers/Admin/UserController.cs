@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -20,8 +19,6 @@ namespace WowApp.Host.Controllers.Admin
             _serviceContainer = serviceContainer;
         }
 
-
-        //https://localhost:5001/api/admin/user/getone?id=1
         [HttpGet]
         [ProducesResponseType(typeof(GetOneUser.Response), 200)]
         public async Task<GetOneUser.Response> GetOne(int id)
@@ -61,8 +58,6 @@ namespace WowApp.Host.Controllers.Admin
             
             Console.WriteLine($"In average, you need to open: {avg} boxes to get the gift.");
             Console.WriteLine($"\n You got the gift from the first box: {firstBox} times");
-
-            
         }
-    } // 33.321879
+    }
 }
